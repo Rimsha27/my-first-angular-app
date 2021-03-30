@@ -4,9 +4,4 @@ import {Component, Output, EventEmitter} from '@angular/core';
     selector: 'app-header',
     templateUrl: './header.component.html'
 })
-export class HeaderComponent {
-    @Output() tabSelected = new EventEmitter<string>();
-    handleSelect(selectedTab: string){
-        this.tabSelected.emit(selectedTab);
-    }
-}
+export class HeaderComponent {}
