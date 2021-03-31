@@ -1,5 +1,5 @@
 import { Recipe } from './recipe.modal';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { IngredientModal } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
@@ -34,8 +34,6 @@ export class RecipeService {
                 new IngredientModal('Eggs', 10)
             ]),
     ];
-
-    recipeSelected = new EventEmitter<Recipe>();
 
     getRecipes(){
         return this.recipes.slice();

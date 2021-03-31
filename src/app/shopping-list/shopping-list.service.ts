@@ -1,9 +1,10 @@
 import { IngredientModal } from '../shared/ingredient.model';
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class ShoppingListService {
-    ingredientsChanged = new EventEmitter<IngredientModal[]>();
+    ingredientsChanged = new Subject<IngredientModal[]>();
 
     ingredients:IngredientModal[] = [
         new IngredientModal('Apples', 5),
@@ -16,11 +17,11 @@ export class ShoppingListService {
 
     addIngredient(ingredient: IngredientModal){
         this.ingredients.push(ingredient);
-        this.ingredientsChanged.emit(this.ingredients.slice());
+        this.ingredientsChanged.next(this.ingredients.slice());
     }
 
     addIngredients(ingredients: IngredientModal[]){
         this.ingredients.push(...ingredients); // to turn the array into a list of single ingredients
-        this.ingredientsChanged.emit(this.ingredients.slice());
+        this.ingredientsChanged.next(this.ingredients.slice());
     }
 }
