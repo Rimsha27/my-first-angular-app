@@ -23,7 +23,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.subscription = this.slService.startedEditing.subscribe((index: number)=>{
       this.editMode = true;
       this.editedItemIndex = index;
-      this.editedItem = this.slService.getIncredient(index);
+      this.editedItem = this.slService.getIngredient(index);
       this.slForm.setValue({
         name: this.editedItem.name,
         amount: this.editedItem.amount,

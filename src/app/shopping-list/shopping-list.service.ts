@@ -12,11 +12,11 @@ export class ShoppingListService {
         new IngredientModal('Tomatoes', 10)
     ]
 
-    getIncredients(){
+    getIngredients(){
         return this.ingredients.slice();
     }
 
-    getIncredient(index:number){
+    getIngredient(index:number){
         return this.ingredients[index];
     }
 
